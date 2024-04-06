@@ -1,0 +1,31 @@
+@import "../variables/variables";
+
+@mixin margin_generator($prefix) {
+  @each $paramSuffix, $parameter in $parametersUnits {
+    @each $alias, $direction in $directions {
+      .#{$prefix}m#{$alias}-#{$paramSuffix} {
+        margin-#{$direction}: $parameter$unit;
+      }
+    }
+  }
+
+  @each $paramSuffix, $parameter in $parametersUnits {
+    .#{$prefix}m-#{$paramSuffix} {
+      margin: $parameter$unit;
+    }
+  }
+
+  @each $paramSuffix, $parameter in $parametersUnits {
+    .#{$prefix}mx-#{$paramSuffix} {
+      margin-left: $parameter$unit;
+      margin-right: $parameter$unit;
+    }
+  }
+
+  @each $paramSuffix, $parameter in $parametersUnits {
+    .#{$prefix}my-#{$paramSuffix} {
+      margin-top: $parameter$unit;
+      margin-bottom: $parameter$unit;
+    }
+  }
+}

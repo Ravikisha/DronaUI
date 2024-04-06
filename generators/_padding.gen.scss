@@ -1,0 +1,31 @@
+@import "../variables/variables";
+
+@mixin padding_generator($prefix) {
+  @each $paramSuffix, $parameter in $parametersUnits {
+    @each $alias, $direction in $directions {
+      .#{$prefix}p#{$alias}-#{$paramSuffix} {
+        padding-#{$direction}: $parameter$unit;
+      }
+    }
+  }
+
+  @each $paramSuffix, $parameter in $parametersUnits {
+    .#{$prefix}p-#{$paramSuffix} {
+      padding: $parameter$unit;
+    }
+  }
+
+  @each $paramSuffix, $parameter in $parametersUnits {
+    .#{$prefix}px-#{$paramSuffix} {
+      margin-left: $parameter$unit;
+      margin-right: $parameter$unit;
+    }
+  }
+
+  @each $paramSuffix, $parameter in $parametersUnits {
+    .#{$prefix}py-#{$paramSuffix} {
+      margin-top: $parameter$unit;
+      margin-bottom: $parameter$unit;
+    }
+  }
+}

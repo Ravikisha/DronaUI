@@ -1,0 +1,32 @@
+@import "./responsive.gen";
+@import "../variables/variables";
+@import "../generators/padding.gen";
+
+@mixin responseClasses($_prefix: "", $breakpoint_max: "") {
+  .#{$_prefix}float-right {
+    float: right;
+  }
+  .#{$_prefix}float-left {
+    float: left;
+  }
+  .#{$_prefix}float-none {
+    float: none;
+  }
+
+  .#{$_prefix}text-center {
+    text-align: center;
+  }
+  .#{$_prefix}text-left {
+    text-align: left;
+  }
+  .#{$_prefix}text-right {
+    text-align: right;
+  }
+  .#{$_prefix}hidden {
+    display: none;
+  }
+  @include padding_generator(#{$_prefix});
+  @include margin_generator(#{$_prefix});
+}
+
+@include responsiveUtilities();

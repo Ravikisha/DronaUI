@@ -1,0 +1,53 @@
+@mixin responsiveUtilities(
+  $breakpoints: (
+    0,
+    576px,
+    768px,
+    992px,
+    1024px,
+    1280px,
+    1536px,
+  ),
+  $breakpointType: px,
+  $breakpointPrefixes: (
+    sm-,
+    md-,
+    lg-,
+    xl-,
+    xxl-,
+    xxxl-,
+  )
+) {
+  @include responseClasses();
+
+  @for $i from 1 through length($breakpointPrefixes) {
+    $prefix: nth($breakpointPrefixes, $i);
+    $breakpoint_min: nth($breakpoints, $i);
+
+    @if $breakpointType == px {
+      $breakpoint_min: nth($breakpoints, $i) + 1;
+    }
+
+    $breakpoint_max: "";
+
+    @if $i < length($breakpointPrefixes) {
+      $breakpoint_max: nth($breakpoints, $i + 1);
+    }
+
+    @if $breakpoint_min == 1 {
+      @media (max-width: $breakpoint_max) {
+        @include responseClasses($prefix);
+      }
+    } @else {
+      @if $breakpoint_max != "" {
+        @media (min-width: $breakpoint_min) and (max-width: $breakpoint_max) {
+          @include responseClasses($prefix);
+        }
+      } @else {
+        @media (min-width: $breakpoint_min) {
+          @include responseClasses($prefix);
+        }
+      }
+    }
+  }
+}
