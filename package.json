@@ -4,8 +4,8 @@
   "description": "A Lightweight CSS Framework",
   "main": "index.js",
   "scripts": {
-    "build" : "sass src/scss/main.scss dist/css/main.css",
-    "dev" : "sass --watch src/scss/main.scss dist/css/main.css"
+    "build" : "sass src/main.scss dist/css/main.css",
+    "dev" : "sass --watch src/main.scss dist/css/main.css"
   },
   "keywords": [],
   "author": "Ravikisha<ravikishan63392@gmail.com>",
