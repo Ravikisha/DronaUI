@@ -2,15 +2,41 @@
   "name": "dronaui",
   "version": "1.0.0",
   "description": "A Lightweight CSS Framework",
-  "main": "index.js",
   "scripts": {
-    "build" : "sass src/main.scss dist/css/main.css",
-    "dev" : "sass --watch src/main.scss dist/css/main.css"
+    "sass:build": "sass src/main.scss dist/css/main.css",
+    "sass:dev": "sass --watch src/main.scss dist/css/main.css",
+    "drona:dev": "npx postcss src/main.scss --output build/css/main.css --env development --verbose --config ./",
+    "drona:prod": "npx postcss ./src/scss/main.scss --output ./build/css/main.css --env prodution --verbose"
   },
-  "keywords": [],
+  "keywords": [
+    "css",
+    "framework",
+    "responsive"
+  ],
   "author": "Ravikisha<ravikishan63392@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^6.1.2",
+    "postcss": "^8.4.38",
+    "postcss-advanced-variables": "^4.0.0",
+    "postcss-assets": "^6.0.0",
+    "postcss-cli": "^11.0.0",
+    "postcss-map-get": "^0.3.0",
+    "postcss-nested": "^6.0.1",
+    "postcss-scss": "^4.0.9",
+    "postcss-sort-media-queries": "^5.2.0",
     "sass": "^1.74.1"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%"
+  ],
+  "files": [
+    "dist/css/main.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ravikisha/DronaUI.git"
   }
 }
