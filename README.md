@@ -1,5 +1,6 @@
 
 # DronaUI
+<img src="./docs/assets/logo.png" height=200>
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![Sass](https://img.shields.io/badge/Sass-^1.32.0-ff69b4)
